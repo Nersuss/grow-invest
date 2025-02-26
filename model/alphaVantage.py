@@ -2,6 +2,7 @@ import logging
 
 import requests
 api_key = 'ETYJF8AVBD4G6WO2'
+# api_key = 'FBHPMXR7LC2AVHK0' 'ZEBSZMBM169YX5Z7'
 
 def get_prices_by_symbol_and_period(symbol, period):
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_{period}&symbol={symbol}&apikey={api_key}&datatype=json'

@@ -45,10 +45,9 @@
             </div>
         </div>
     </nav>
-    <div class="row justify-content-md-center">
-        <div class="col-7 justify-content-center">
-            <select class="form-select js-select2 w-50">
-            </select>
+    <div class="row justify-content-md-center mt-3">
+        <div class="col-4">
+            <select class="form-select js-select2"></select>
             <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
             <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/select2.min.js"></script>
@@ -56,13 +55,13 @@
             <script>
                 $(document).ready(function() {
                     $('.js-select2').select2({
-                        placeholder: "Поиск",
+                        placeholder: "Поиск по акциям",
                         maximumSelectionLength: 2,
                         language: "ru",
                         ajax: {
                             url: '/api/stocks/',
                             dataType: 'json',
-                            delay: 250,
+                            delay: 350,
                             data: function (params) {
                                 return {
                                     query: params.term // передаем введенный текст
@@ -84,26 +83,30 @@
                     });
                 });
             </script>
+        </div>
+    </div>
+    <div class="row justify-content-md-center mb-2 mt-4">
+        <div class="col-6">
             <div class="btn-group d-flex justify-content-center" role="group"
                  aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio1">1 мин.</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio2">5 мин.</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio3">15 мин.</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio4">30 мин.</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio5">1 час</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio6">5 часов</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio7" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio7">День</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio8" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio8">Неделя</label>
-                <input type="radio" class="btn-check" name="btnradio" id="btnradio9" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="btnradio9">Месяц</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio1">1 мин.</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio2" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio2">5 мин.</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio3" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio3">15 мин.</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio4" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio4">30 мин.</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio5" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio5">1 час</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio6" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio6">5 часов</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio7" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio7">День</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio8" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio8">Неделя</label>
+                <input type="radio" class="btn-check btn-sm" name="btnradio" id="btnradio9" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="btnradio9">Месяц</label>
                 <!--                    <button class="btn btn-outline-dark btn-sm">1 мин.</button>-->
                 <!--                    <button class="btn btn-outline-dark btn-sm">5 мин.</button>-->
                 <!--                    <button class="btn btn-outline-dark btn-sm">15 мин.</button>-->
@@ -114,6 +117,10 @@
                 <!--                    <button class="btn btn-outline-dark btn-sm">Неделя</button>-->
                 <!--                    <button class="btn btn-outline-dark btn-sm">Месяц</button>-->
             </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-7 justify-content-center">
             <canvas id="priceChart"></canvas>
             <script>
                 const ctx = document.getElementById('priceChart');
@@ -139,7 +146,6 @@
                     }
                 });
             </script>
-
         </div>
     </div>
     <div class="row justify-content-md-center">
